@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#10171b">
+  <title>Realmwatch · Valheim servers</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="masthead">
+      <a class="brand" href="/" aria-label="Realmwatch home"><svg viewBox="0 0 36 40" aria-hidden="true"><path d="M3 6 18 1l15 5v15c0 9-15 17-15 17S3 30 3 21Z"/><path d="m10 13 8 13 8-13M18 9v17"/></svg><span>REALMWATCH<small>VALHEIM SERVER MONITOR</small></span></a>
+      <div class="header-meta"><span class="host">VALHEIM</span><span class="live-badge" id="liveBadge"><i></i> CONNECTING</span></div>
+    </header>
+    <main>
+      <div class="page-intro"><div><p class="eyebrow">THE WATCHTOWER</p><h1>Your realms. One view.</h1><p class="intro-copy">Server health, the Vikings online, and the comings and goings.</p></div><button id="refresh" class="button"><span aria-hidden="true">↻</span> Refresh</button></div>
+      <div class="notice" id="notice" role="status" hidden></div>
+      <section class="metrics" aria-label="Server overview">
+        <article><span class="metric-label">REALMS ONLINE</span><div class="metric"><strong id="metricServers">—</strong><small id="metricServersTotal"></small></div><span class="metric-note">Responding to live queries</span></article>
+        <article><span class="metric-label">VIKINGS ONLINE</span><div class="metric"><strong id="metricOnline">—</strong><span class="metric-glyph">✧</span></div><span class="metric-note">Across all realms right now</span></article>
+        <article><span class="metric-label">KNOWN CHARACTERS</span><div class="metric"><strong id="metricPlayers">—</strong></div><span class="metric-note">Seen in retained server logs</span></article>
+        <article><span class="metric-label">ARRIVALS TODAY</span><div class="metric"><strong id="metricJoins">—</strong></div><span class="metric-note">Since midnight in London</span></article>
+      </section>
+      <section class="realms-section" aria-labelledby="realms-title"><div class="section-heading"><h2 id="realms-title">The realms <span id="realmCount" class="count-badge">0</span></h2><span class="muted small">Select a realm to focus its players</span></div><div class="realm-grid" id="realms"><div class="loading">Reading the runes…</div></div></section>
+      <section class="online-section" aria-labelledby="online-title"><div class="section-heading"><h2 id="online-title">Around the campfire <span class="count-badge" id="onlineCount">0</span></h2><span class="eyebrow live-word">ONLINE NOW</span></div><div id="onlinePlayers" class="online-players"><div class="empty-state">Waiting for the first server scan.</div></div></section>
+      <section class="history-section" aria-labelledby="history-title">
+        <div class="section-heading history-heading"><div><h2 id="history-title">Player ledger</h2><p class="muted small">Last recorded login and logout for each character, per realm.</p></div><div class="filters"><label class="sr-only" for="serverFilter">Filter by realm</label><select id="serverFilter"><option value="">All realms</option></select><label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search characters</span><input id="search" type="search" placeholder="Find a Viking…" autocomplete="off"></label></div></div>
+        <div class="table-wrap"><table><thead><tr><th>CHARACTER</th><th>REALM</th><th>STATUS</th><th>LAST LOGIN</th><th>LAST LOGOUT</th><th class="number">VISITS</th></tr></thead><tbody id="playerRows"><tr><td colspan="6" class="table-empty">Loading player history…</td></tr></tbody></table></div>
+        <div class="ledger-footer"><span id="ledgerCount">0 characters</span><span>Times in Europe/London · ≈ means detected, rather than logged</span></div>
+      </section>
+      <section class="portal-section" aria-labelledby="portal-title">
+        <div class="section-heading history-heading"><div><h2 id="portal-title">Portal atlas</h2><p class="muted small">Connections from the last committed world save. Updates when the game saves.</p></div><div class="filters"><label for="portalWorld">World</label><select id="portalWorld"></select><label class="sr-only" for="portalSearch">Find a portal</label><input id="portalSearch" type="search" placeholder="Find a portal tag…"><label><input id="portalUnpaired" type="checkbox"> Unpaired only</label></div></div>
+        <p id="portalSummary" class="muted small" role="status"></p>
+        <div class="portal-layout"><div><div class="portal-map-controls"><button id="portalZoomIn" class="button" aria-label="Zoom in">+</button><button id="portalZoomOut" class="button" aria-label="Zoom out">−</button><button id="portalWorldView" class="button">World view</button><button id="portalReset" class="button">Fit portals</button></div><svg id="portalMap" viewBox="0 0 800 600" role="group" aria-label="World map with world edge, distance rings and portals"></svg><div class="biome-legend" aria-label="Approximate biome distance guide"><span class="meadows">Meadows · inner world</span><span class="forest">Black Forest · ~0.6 km+</span><span class="swamp">Swamp · ~2 km+</span><span class="plains">Plains · ~3 km+</span><span class="mistlands">Mistlands · ~6 km+</span><span class="deep-north">Deep North · illustrative northern cap</span><span class="ashlands">Ashlands · illustrative southern cap</span></div><p class="muted small">Colours are a general distance guide, not actual biome boundaries. Biomes overlap; mountains depend on height and ocean can occur throughout. The icy northern and volcanic southern caps are illustrations, not surveyed biome boundaries or coastlines.</p><p class="muted small">North is up · X east/west, Z north/south · Click a portal or row to highlight its connection. World edge: 10.5 km from centre. No coastlines or landmass details are shown.</p></div>
+        <div class="portal-table table-wrap"><table><thead><tr><th>TAG / POSITION</th><th>SAVED STATUS</th><th>DESTINATION</th></tr></thead><tbody id="portalRows"></tbody></table></div></div>
+        <p id="portalDetail" class="muted small" role="status"></p>
+      </section>
+      <section class="activity-section" aria-labelledby="activity-title"><div class="section-heading"><h2 id="activity-title">Recent activity</h2><span class="muted small">Latest 30 recorded arrivals & departures</span></div><div id="activity" class="activity-list"></div></section>
+    </main>
+    <footer><span class="footer-brand">REALMWATCH <span>·</span> The watch never ends.</span><div><span id="historyStart">History starts with available server logs.</span><span id="updatedAt">Waiting for data</span></div></footer>
+  </div>
+</body>
+</html>

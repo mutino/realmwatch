@@ -1,0 +1,20 @@
+[Unit]
+Description=Realmwatch read-only Valheim collector
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/realmwatch/collector.py --data-dir /opt/realmwatch/data
+Restart=on-failure
+RestartSec=10
+UMask=0027
+Nice=10
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/opt/realmwatch/data
+
+[Install]
+WantedBy=multi-user.target

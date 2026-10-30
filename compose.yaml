@@ -1,0 +1,22 @@
+services:
+  dashboard:
+    build: .
+    image: realmwatch:local
+    ports:
+      - "${REALMWATCH_BIND_ADDRESS:-127.0.0.1}:8088:8080"
+    environment:
+      UPSTREAM_SECRET_FILE: /run/secrets/upstream_secret
+    volumes:
+      - ./data/public:/data:ro
+      - ./secrets/upstream_secret:/run/secrets/upstream_secret:ro
+    read_only: true
+    tmpfs:
+      - /tmp:size=8m,noexec,nosuid
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    restart: unless-stopped
+    mem_limit: 128m
+    cpus: 0.50
+    logging:
+      driver: json-file
+      options: {max-size: "5m", max-file: "2"}
