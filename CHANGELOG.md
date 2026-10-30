@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Add dashboard and portal-atlas screenshots using synthetic data.
+- Require contributions to be the contributor's own work and clearly identify
+  any AI-generated content.
+
 - Adopt the MIT licence.
 - Disclose the AI-generated origin of the initial implementation and graphics.
 - Welcome human-created artwork and other community contributions, with

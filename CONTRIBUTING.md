@@ -2,11 +2,14 @@
 
 Thanks for helping improve Realmwatch. Its initial code, documentation and
 placeholder artwork were AI-generated using OpenAI Codex under human direction.
-Human-created work is warmly welcomed, and using AI is not a requirement.
+Contributions should be your own work. Any AI-generated content must be
+clearly identified in the pull request, including which files or parts were
+generated. AI-assisted work is welcome too; describe how AI was used. Using
+AI is not a requirement.
 
 ## Graphics and design
 
-We would especially love original human-created icons, illustrations, biome
+We would especially love original icons, illustrations, biome
 artwork, map styling, typography and other UI improvements. Credit the artist
 in your pull request and include any preferred attribution text.
 
@@ -26,8 +29,8 @@ in your pull request and include any preferred attribution text.
 
 Open an issue for substantial ideas, or send a focused pull request describing
 what changes and why. For visual changes, include a screenshot with synthetic
-portal data rather than private world data. Identify any AI-generated or
-AI-assisted portions of a contribution and acknowledge third-party sources.
+portal data rather than private world data. Clearly identify any AI-generated content, describe any AI assistance,
+and acknowledge third-party sources.
 
 Code, bug reports, accessibility fixes, tests, documentation and translations
 are just as valuable as artwork. Explain how a code change was checked. Run:

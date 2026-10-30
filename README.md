@@ -10,14 +10,31 @@ Realmwatch's initial code, documentation and placeholder graphics were
 AI-generated using OpenAI Codex, under human direction. This is stated openly
 so users and contributors can assess the project with that context.
 
-**Human-created contributions are warmly welcomed**, especially original
+**Contributions are warmly welcomed**, especially original
 illustrations, icons, biome graphics, typography and UI design. The current
 map artwork is a starting point. Improvements to code, accessibility, tests,
 documentation and translations are equally welcome. You do not need to use
-AI to contribute.
+AI to contribute. Contributions should be your own work, and any AI-generated
+content must be clearly identified in your pull request.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for artwork requirements, attribution
 and how to propose a change.
+
+## Screenshots
+
+These screenshots use invented worlds, characters and portal coordinates.
+They contain no private game saves or player history.
+
+### Server overview
+
+![Realmwatch overview showing sample realms and online player counts](docs/screenshots/overview.png)
+
+### Portal atlas
+
+![Portal atlas showing a highlighted saved connection, world edge and illustrative biome guides](docs/screenshots/portal-atlas.png)
+
+The atlas view is filtered to the example Harbour pair. Biome colours and
+polar caps are approximate illustrations, not undiscovered landmass details.
 
 ## Features
 
