@@ -4,6 +4,21 @@ A self-hosted Valheim dashboard with server status, character history and a
 read-only portal atlas for each world. Python standard library backend,
 plain JavaScript frontend, and a small Docker web container.
 
+## AI-generated origin and community contributions
+
+Realmwatch's initial code, documentation and placeholder graphics were
+AI-generated using OpenAI Codex, under human direction. This is stated openly
+so users and contributors can assess the project with that context.
+
+**Human-created contributions are warmly welcomed**, especially original
+illustrations, icons, biome graphics, typography and UI design. The current
+map artwork is a starting point. Improvements to code, accessibility, tests,
+documentation and translations are equally welcome. You do not need to use
+AI to contribute.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for artwork requirements, attribution
+and how to propose a change.
+
 ## Features
 
 - Discover Valheim containers using the community Valheim server image.
@@ -99,5 +114,9 @@ docker build -t realmwatch:test .
 The Docker build validates JavaScript syntax. CI runs unit tests and builds
 the dashboard. There are no third-party Python dependencies.
 
-No redistribution license has been selected yet. Public visibility alone
-does not grant a software reuse license.
+## Licence
+
+Realmwatch is released under the [MIT licence](LICENSE). You may use, modify
+and redistribute it, including commercially, provided the copyright and
+permission notice are retained. It is provided without warranty. Third-party
+trademarks and game assets are not relicensed by this project.

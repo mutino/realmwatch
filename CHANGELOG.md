@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased
+
+- Adopt the MIT licence.
+- Disclose the AI-generated origin of the initial implementation and graphics.
+- Welcome human-created artwork and other community contributions, with
+  guidance on attribution, map privacy and contribution licensing.
+
 ## 0.1.0
 
 Initial packaged release: Valheim status and character history, read-only
